@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type="button">Add new</button>
+    <button type="button">Delete</button>
+    <button type="button">Delete All</button>
+
+    <div></div>
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        var no = 1;
+
+            $('button:eq(0)').click(function(){
+                var text = 'item' + (no++);
+                var p = $('<p></p>').html(text);
+                $('div').append(p);
+            });
+
+        
+            $('button:eq(1)').click(function(){
+                if($('div').children().length >0)
+                {
+                    $('div').children().last().remove();
+                    no--;
+                }
+
+            });
+
+            $('button:eq(2)').click(function(){
+                $('div').html('');
+                no = 1;
+                
+            });
+        });
+
+    </script>
+</body>
+</html>

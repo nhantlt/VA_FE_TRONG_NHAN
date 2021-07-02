@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập 2</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="soA">Số A</label>
+            <input type="number" id="soA" required />
+         </div>
+         <div>
+             <button type="button">Tính Toán</button>
+             <span id="result"></span>       
+         </div>
+
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+
+         <script>
+            $(document).ready(function(){
+               $('button').click(function(){
+                    soA = $('#soA').val();
+    
+                    if(parseInt(soA)==parseInt(soA)){
+                        $('#result').text('Là số thuận ngịch');
+                    } else 
+                    {
+                        $('#result').text('Không là số thuận ngịch');
+                    }
+                   
+               });
+            });
+    
+        </script>
+</body>
+</html>
